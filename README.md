@@ -25,7 +25,22 @@ Applying this technique, an image is obtained with only black and white tones, l
 ## Convolutional Neural Network
 
 The recognition algorithm used in this work is the convolutional neural network [CNN] - which will be responsible for recognizing the digits in the project, it is a robust and reliable machine learning algorithm for this type of problem. In 1962, Hubel and Wiesel carried out research that indicated that some neurons become active together when exposed to lines or curves, which facilitates visual recognition. Then CNN’s filter lines, curves and edges, and, in each subsequent layer, convert this filtering into a more complex image. The first successful application of a CNN was developed by Yann LeCun in 1998, with seven layers between convolutions and fully connected. In final layer where were calculates the probability of the input belonging to a certain category, in this case, 10 categories(0-9) digits.
-CNN data inputs are a three-dimensional matrix (height x width x colors), in general 3 color channels are used, which are red, blue, and green, the term used is RGB.
+CNN data inputs are a three-dimensional matrix (height x width x colors), in general 3 color channels are used, which are red, blue, and green, the term used is RGB. We can see below how the neural network turned out.
+
+
+|Layer (type)               |  Output Shape             | Param #   |
+|---------------------------|---------------------------|-----------|
+|conv2d (Conv2D)            | (None, 26, 26, 32)        |320        |                                                             
+|max_pooling2d (MaxPooling2D)  | (None, 13, 13, 32)      | 0         |                                                                                    |conv2d_1 (Conv2D)             | (None, 11, 11, 64)       | 18496   |                                                                
+| max_pooling2d_1 (MaxPooling 2D)   | (None, 5, 5, 64)         | 0   |                                                                                    |flatten (Flatten)           | (None, 1600)             | 0        | 
+| dense (Dense)              | (None, 100)              | 160100    |
+|dense_1 (Dense)           |  (None, 10)                | 1010      |
+|---------------------------|---------------------------|-----------|                                                             
+Total params: | 179,926 |
+Trainable params: | 179,926 |
+Non-trainable params: |0 |
+
+
 To train a deep learning algorithm, regardless of the type of technique to be applied in a project, it is necessary to have an extensive database and a computer that is compatible with processing. Training an algorithm consists of using known results from certain cases to solve another case with some degree of similarity between them. To obtain good results when training an algorithm, your database, in addition to being extensive, must have a good variety of information, with several different observations. The more diverse the data, the more likely it is to achieve satisfactory results. In addition to diversity, the number of iterations and repetitions (epochs) to be made when training a neural network algorithm is also extremely important. The number of iterations defines how many times the neurons will interact with each other during the training of the algorithm to define the weights, and the number of epochs defines how many times the iterations will be repeated. It is from the epochs that we can see the evolution of the algorithm. each workout performed. 
 
 <div aling="center">
